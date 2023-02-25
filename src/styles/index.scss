@@ -1,0 +1,210 @@
+@use "./function" as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+
+#btn-start{
+    animation: btnAnimation 3.5s;
+}
+
+.ms-button{
+    font-size: 1.8rem;
+    background-color:#eeeeee;
+    color: #252525;
+    width: 40px;
+    height: 60px;
+    border-bottom: 5px solid grey;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.ms-button.keyEnterEffect{
+    animation: keyboardeffect;
+}
+
+.ms-button:active{
+    background-color: #c9c9c9;
+    border-bottom: 2px solid grey;
+}
+
+.ms-text-primary{
+    font-size: 3.5rem;
+    margin-top: .5rem;
+    margin-bottom: 3rem;
+    animation: netflix_style 3.5s;
+    outline: none;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 576px){
+    .ms-button{
+        // width: 30px;
+        // height: 40px;
+        margin: 0 4px;
+        font-size: 1.2rem;
+    }
+
+    .ms-text-primary {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767){
+    .ms-button {
+        // width: 30px;
+        // height: 50px;
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+}
+
+@keyframes keyboardeffect {
+    from {
+        left: -100px;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes netflix_style {
+    0% {
+        color: #f3f3f3;
+        transform: scale(1.5, 1.5);
+    }
+
+    10% {
+        color: #f3f3f3;
+        transform: scale(1.5, 1.5);
+    }
+
+    15% {
+        color: #f3f3f3;
+    }
+
+    20% {
+        color: #198754;
+        text-shadow: none;
+        transform: scale(1.1, 1.1);
+    }
+
+    75% {
+        opacity: 1;
+    }
+}
+
+@keyframes btnAnimation {
+    0% {
+        color: #f3f3f3;
+        transform: scale(1.5, 1.5);
+    }
+
+    10% {
+        color: #f3f3f3;
+        transform: scale(1.5, 1.5);
+    }
+
+    15% {
+        color: #f3f3f3;
+    }
+
+    20% {
+        color: #f3f3f3;
+        text-shadow: none;
+        transform: scale(1.1, 1.1);
+    }
+
+    75% {
+        opacity: 1;
+    }
+}
+
+.error{
+    display: inline-block;
+    animation: error_animation 1s;
+}
+
+@keyframes error_animation {
+    0% {
+        color: #f3f3f3;
+        transform: translateX(0px);
+        timing-function: ease-in;
+    }
+
+    37% {
+        color: red;
+        transform: translateX(5px);
+        timing-function: ease-out;
+    }
+
+    55% {
+        color: red;
+        transform: translateX(-5px);
+        timing-function: ease-in;
+    }
+
+    73% {
+        color: red;
+        transform: translateX(4px);
+        timing-function: ease-out;
+    }
+
+    82% {
+        color: red;
+        transform: translateX(-4px);
+        timing-function: ease-in;
+    }
+
+    91% {
+        color: red;
+        transform: translateX(2px);
+        timing-function: ease-out;
+    }
+
+    96% {
+        color: red;
+        transform: translateX(-2px);
+        timing-function: ease-in;
+    }
+
+    100% {
+        color: #f3f3f3;
+        transform: translateX(0px);
+        timing-function: ease-in;
+    }
+}
+
+.pressed{
+    animation: btn_pressed .1s;
+}
+
+@keyframes btn_pressed{
+    0%{
+        background-color: #eeeeee;
+        border-bottom: 5px solid grey;
+    }
+
+    20%{
+        background-color: #9e9e9e;
+        border-bottom: 2px solid grey;
+    }
+
+    75%{
+        background-color: #9e9e9e;
+        border-bottom: 2px solid grey;
+    }
+
+    90%{
+        background-color: #eeeeee;
+        border-bottom: 5px solid grey;
+    }
+}
